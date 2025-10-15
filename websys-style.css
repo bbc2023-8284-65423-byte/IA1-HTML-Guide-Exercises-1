@@ -1,0 +1,193 @@
+h1 {
+    color : rgb(0, 0, 0);
+    padding: 8px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+h2 {
+    text-align: center;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.6;
+    text-align: center;
+}
+
+a {
+    color: rgb(232, 0, 0);
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+li {
+    margin: 5px;
+}
+
+table {
+    border: 1px solid black;
+}
+
+td {
+    padding: 10px;
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+button {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 8px;
+}
+
+form {
+    border: 1px solid black;
+    padding: 15px;
+}
+
+input {
+    border: 2px solid black;
+}
+
+textarea {
+    width: 300px;
+    height: 100px;
+}
+
+audio {
+    width: 250px;
+}
+
+video {
+    border: 3px solid black;
+}
+
+/* ID Selectors */
+
+#main-title {
+    color: rgb(212, 0, 0);
+    font-size: 30px;
+}
+
+#intro-text {
+    font-style: italic;
+}
+
+#student-table {
+    border-collapse: collapse;
+}
+
+#profile-pic {
+    border-radius: 50%;
+}
+
+#submit-btn {
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+#container {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+#email-field {
+    border: 1px solid rgb(216, 0, 0);
+}
+
+#home-link {
+    color: black;
+}
+
+#login-form {
+    background: #f9f9f9;
+    padding: 15px;
+}
+
+#footer-text {
+    text-align: right;
+}
+
+/* Class Selectors*/
+
+.paragraph {
+    font-family: Arial, sans-serif;
+}
+
+.title  {
+    color: black;
+}
+
+.btn    {
+    background-color: rgb(232, 0, 0);
+    color: white;
+}
+
+.rounded-img {
+    border-radius: 15px;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+}
+
+.highlight {
+    background-color: rgb(232, 0, 0);
+    color: white;
+}
+
+.nav-link {
+    color: rgb(232, 0, 0);
+    margin-right: 15px;
+}
+
+.list-item {
+    font-weight: bold;
+}
+
+.input-field {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.footer-note {
+    font-size: 12px;
+    color: black;
+}
+
+blockquote {
+    text-align: center;
+}
+
+address {
+    text-align: center;
+}
+
+.bar {
+    display: block;
+    margin: 0 auto;
+}
