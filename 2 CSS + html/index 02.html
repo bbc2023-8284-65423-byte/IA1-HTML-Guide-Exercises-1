@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Simple Header with inline css-->
+        <style>
+            body {
+                background-color: #FAF8F0; /* Sandy Off-white */
+                color: #5C4033; /* Earthy Brown */
+            }
+            header {
+                background-color: #4DB6AC; /* Nook Inc. Teal */
+                padding: 20px;
+                text-align: center;
+                color: white;
+            }
+            /* Two-Column Layout (Float Method)*/
+            .left {
+                float: left;
+                width: 50%;
+                background: #FFFBEF; /* Light Cream */
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .right {
+                float: right;
+                width: 50%;
+                background: #76B852; /* Animal Crossing Leaf Green */
+                padding: 20px;
+                color: white;
+                box-sizing: border-box;
+            }
+            /* Responsive Image (CSS Max-Width)*/
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            /* Navigation Bar (Basic) */
+            ul {
+                list-style-type: none;
+                background: #5C4033; /* Earthy Brown */
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+            li {
+                display: inline;
+                margin-right: 20px;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+            }
+            /* Styled Button with Hover Effect */
+            .btn {
+                background: #4DB6AC; /* Nook Inc. Teal */
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+            }
+            .btn:hover {
+                background: #26A69A; /* Darker Teal */
+            }
+            /* Simple Form Styling */
+            form {
+                width: 300px;
+                margin: 20px auto;
+                background-color: #FFFFFF;
+                padding: 20px;
+                border: 1px solid #A5D6A7;
+            }
+            input, textarea {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 8px;
+                background-color: #FFFBEF;
+                border: 1px solid #C8E6C9;
+            }
+            /* Card Layout (manual)*/
+            .card {
+                border: 1px solid #A5D6A7; /* Soft Green Border */
+                border-radius: 5px;
+                padding: 20px;
+                width: 250px;
+                margin: 10px auto;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            }
+            /* Modal Simulation (Hide/Show with CSS)*/
+            .modal {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                padding: 20px;
+                border: 1px solid #A5D6A7; /* Soft Green Border */
+            }
+            .modal.show {
+                display: block;
+            }
+            /* Grid Layout Using CSS Flexbox */
+            .row {
+                display: flex;
+            }
+            .col-flex {
+                flex: 1;
+                margin: 5px;
+                padding: 20px;
+                background: #76B852; /* Animal Crossing Leaf Green */
+                color: white;
+            }
+            /* Simple Dropdown Menu (CSS Hover) */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #FFFFFF;
+                border: 1px solid #A5D6A7; /* Soft Green Border */
+                min-width: 120px;
+                z-index: 1;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            /* Centering content with flexbox */
+            .center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50vh; /* Adjusted for visibility */
+            }
+            /* Sticky Header */
+            .sticky-header {
+                position: sticky;
+                top: 0;
+                background: #5C4033; /* Earthy Brown */
+                padding: 15px;
+                color: white;
+            }
+            /* Fixed Footer */
+            footer {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background: #5C4033; /* Earthy Brown */
+                color: white;
+                text-align: center;
+                padding: 10px;
+            }
+            /* Responsive Columns (Percentage Widths) */
+            .col {
+                float: left;
+                width: 33.3%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            /* Image Gallery with Flexbox */
+            .gallery {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .gallery img {
+                width: 30%;
+                margin: 1%;
+            }
+            /* Profile Card Layout */
+            .profile-card {
+                width: 250px;
+                border: 1px solid #A5D6A7; /* Soft Green Border */
+                border-radius: 5px;
+                padding: 15px;
+                text-align: center;
+                margin: auto;
+            }
+            /* Simple Banner Section */
+            .banner {
+                background: #4DB6AC; /* Nook Inc. Teal */
+                padding: 50px;
+                text-align: center;
+                color: white;
+            }
+            /* Responsive Navbar with Flexbox */
+            nav {
+                 display: flex;
+                 justify-content: space-between;
+                 background: #5C4033; /* Earthy Brown */
+                 padding: 10px;
+            }
+            /* Pricing Table Layout */
+            .pricing {
+                display: flex;
+                justify-content: center;
+            }
+            .plan {
+                border: 1px solid #A5D6A7; /* Soft Green Border */
+                padding: 20px;
+                margin: 10px;
+                width: 200px;
+                text-align: center;
+            }
+            /* Simple Sidebar Layout */
+            .sidebar {
+                width: 200px;
+                float: left;
+                background: #FFFBEF; /* Light Cream */
+                border-right: 1px solid #A5D6A7; /* Soft Green Border */
+                height: 100vh;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+            .content {
+                margin-left: 220px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>My Website</h1>
+        </header>
+
+        <div style="overflow: hidden;"> <!-- Clearfix for floated columns -->
+            <div class="left">Left Content</div>
+            <div class="right">Right Content</div>
+        </div>
+
+        <img src="e0255b200aaef552e859004247741922.jpg" alt="Sample">
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <button class="btn">Click Me</button>
+
+        <form action="">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Submit</button>
+        </form>
+
+        <div class="card">
+            <h3>Card Title</h3>
+            <p>Some card Content</p>
+        </div>
+
+        <button onclick="document.getElementById('myModal').classList.add('show')">Open Modal</button>
+        <div id="myModal" class="modal">
+            <p>This is a modal!</p>
+            <button onclick="document.getElementById('myModal').classList.remove('show')">Close</button>
+        </div>
+
+        <div class="row">
+            <div class="col-flex">Column 1</div>
+            <div class="col-flex">Column 2</div>
+            <div class="col-flex">Column 3</div>
+        </div>
+
+        <div class="dropdown">
+            <button>Menu</button>
+            <div class="dropdown-content">
+                <p>Option 1</p>
+                <p>Option 2</p>
+            </div>
+        </div>
+
+        <div class="center">
+            <h1>Centered Text</h1>
+        </div>
+
+        <div class="gallery">
+            <img src="JIHYO CFM 2.png" alt="">
+            <img src="JIHH.png" alt="">
+            <img src="JIHYO CFM 2.png" alt="">
+        </div>
+
+        <div class="profile-card">
+            <img src="20230408_214058.jpg" alt="">
+            <h3>rens</h3>
+            <p>2D AND 3D ARTIST</p>
+        </div>
+
+        <div class="banner">
+            <h1>Welcome to ren's Website</h1>
+            <p>WILLLKOMM</p>
+        </div>
+
+        <nav>
+            <div>Logo</div>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">About</a>                
+            </div>
+        </nav>
+
+        <div class="pricing">
+            <div class="plan">Basic</div>
+            <div class="plan">Standard</div>
+            <div class="plan">Premium</div>
+        </div>
+
+        <div style="padding-bottom: 50px;"> <!-- Padding to see content above fixed footer -->
+            <header class="sticky-header">Sticky Header</header>
+            <p>Scroll down.</p>
+            <div style="height: 500px;"></div>
+        </div>
+
+        <footer>Fixed Footer</footer>
+    </body>
+</html>
