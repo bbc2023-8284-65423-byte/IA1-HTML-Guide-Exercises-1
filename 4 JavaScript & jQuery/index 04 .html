@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Practice Exercises</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+
+        <Style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            #secret {
+                display: none;
+            }
+
+            .highlight {
+                background-color: #e0e0e0;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            .recla {
+                background-color: #e0e0e0;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            .togcla {
+                background-color: #e0e0e0;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            #pandown {
+                width: 200px;
+                height: 0;
+                color: white;
+                background-color: #000000;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: height 0.5s ease;
+            }
+            hr {
+                border: 0;
+                height: 2px;
+                background: #000;
+                margin: 25px 0;
+            }
+
+
+        </Style>
+
+    </head>
+
+    <body>
+        <p><b>1. Changing Text of an Element</b></p>
+        <p id="greeting">Initial text.</p>
+
+        <script>
+            $(document).ready(function(){
+                $("#greeting").text("Greetings! This text was updated with jQuery.");
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>2. Changing Background Color</b></p>
+
+        <div id="box" style="width: 200px; height: 100px; align-content: center; padding: 6px; border: 1px solid #ccc;">This is a container.</div>
+
+        <script>
+            $(document).ready(function() {
+                $("#box").css("background-color", "#f0f0f0");
+            });
+
+        </script>
+
+        <hr>
+
+        <p><b>3. Hiding an Element</b></p>
+        <p id="hiding">This text can be hidden. Press the button.</p>
+        <button id="btn">Vanish</button>
+        <button id="btns">Reappear</button>
+
+        <script>
+            $("#btn").click(function(){ 
+                $("#hiding").hide(); 
+            }); 
+
+            $("#btns").click(function(){ 
+                $("#hiding").show(); 
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>4. Showing an Element</b></p>
+        <p id="secret">Ta-da!</p>
+        <button id="showbtn">Reveal</button>
+
+        <script>
+            $("#showbtn").click(function(){ 
+                $("#secret").show(); 
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>5. Toggling Visibility</b></p>
+        <p id="togel">Now you see me, now you don't.</p>
+        <button id="togelbtn">Toggle Visibility</button>
+
+        <script>
+            $("#togelbtn").click(function(){ 
+                $("#togel").toggle(); 
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>6. Adding a Class</b></p>
+        <p id="adcla">This text will get a new style.</p>
+        <button id="adclabtn">Add Style</button>
+
+        <script>
+            $("#adclabtn").click(function(){ 
+                $("#adcla").addClass("highlight");
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>7. Removing a Class</b></p>
+        <p class="recla" id="recla">This style can be removed.</p>
+        <button id="reclabtn">Reset Style</button>
+
+        <script>
+            $("#reclabtn").click(function(){ 
+                $("#recla").removeClass("recla");
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>8. Toggling a Class</b></p>
+        <p id="togcla">This text's style will toggle.</p>
+        <button id="togbtn">Switch Style</button>
+        
+        <script>
+            $("#togbtn").click(function(){ 
+                $("#togcla").toggleClass("togcla");
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>9. Changing Image Source</b></p>
+        <img id="myImg" src="20230408_214058.jpg" alt="clen.jpg" width="200">
+        <button id="changeimg">Swap Image</button>
+
+        <script>
+            $("#changeimg").click(function(){ 
+                $("#myImg").attr("src", "img/clen.jpg");
+            }); 
+        </script>
+
+        <hr>
+
+        <p><b>10. Getting Input Value</b></p>
+        <input type="text" id="name" placeholder="What's your name?">
+        <button id="getValBtn">Show Value</button>
+
+        <script>
+            $("#getValBtn").click(function() {
+                let val = $("#name").val();
+                console.log(val);
+                alert("The value is: " + val);
+
+            });
+        </script>
+
+        <hr>
+
+        <p><b>11. Setting Input Value</b></p>
+        <input type="text" id="nema" placeholder="Enter something here...">
+        <button id="setValBtn">Change Value</button>
+
+        <script>
+            $("#setValBtn").click(function() {
+                $("#nema").val("This is the new value!");
+            });
+        </script>
+
+        <hr>
+
+        <p><b>12. Appending Content</b></p>
+        <p id="apcon">This is the original text.</p>
+        <button id="appendBtn">Add to End</button>
+        
+        <script>
+            $("#appendBtn").click(function() {
+                $("#apcon").append(" ...and this is the added part!");;
+            });
+        </script> 
+
+        <hr>
+
+        <p><b>13. Prepending Content</b></p>
+        <p id="prepcon">...this is the main content.</p>
+        <button id="prependBtn">Add to Start</button>
+
+        <script>
+            $("#prependBtn").click(function() {
+                $("#prepcon").prepend("Start here... ");
+            });
+            
+        </script>
+
+        <hr>
+
+        <p><b>14. Fading Out an Element</b></p>
+        <div id="boxout" style="width: 200px; height: 100px; background-color: #e0e0e0; 
+        display: flex; align-items: center; justify-content: center; border: 1px solid #ccc;">I'm going to disappear.</div>
+        <button id="fadeBtn" style="padding: 6px;">Fade Away</button>
+
+        <script>
+            $("#fadeBtn").click(function() {
+                $("#boxout").fadeOut();
+            });
+        </script>
+
+        <hr>
+
+        <p><b>15. Fading In an Element</b></p>
+        <div id="boxein" style="width: 200px; height: 100px; background-color: #cccccc; display: none;
+        align-items: center; justify-content: center; border: 1px solid #aaa;">Surprise!</div>
+        <button id="fedaBtn" style="padding: 6px;">Appear Button</button>
+
+        <script>
+            $("#fedaBtn").click(function() {
+                $("#boxein").css("display", "flex").hide().fadeIn();
+            });
+        </script>
+
+        <hr>
+
+        <p><b>16. Sliding Up an Element</b></p>
+        <div id="panel" style="width: 200px; height: 100px; background-color: #888888; color: white; overflow: hidden;
+        transition: max-height 0.5s ease-out; max-height: 200px; display: flex; align-items: center; justify-content: center;">
+        Going up!</div>
+        <button id="slideBtn" style="padding: 8px;">Slide Away</button>
+
+        <script>
+            $("#slideBtn").click(function() {
+             $("#panel").slideUp();
+            });
+        </script>
+
+        <hr>
+
+        <p><b>17. Sliding Down an Element</b></p>
+        <div id="pandown">Coming down!</div>
+        <button id="SlideDBtn" style="padding: 8px;">Slide Into View</button>
+
+        <script>
+            $("#SlideDBtn").click(function() {
+                $("#pandown").css("height", "100px");
+            });
+        </script>
+
+        <hr>
+
+        <p><b>18. Changing Multiple CSS Properties</b></p>
+        <p id="demo18">This text will be restyled.</p>
+        <button id="multiStyleBtn">Apply New Styles</button>
+
+        <script>
+            $("#multiStyleBtn").click(function() {
+                $("#demo18").css({
+                    "color": "white",
+                    "background-color": "black",
+                    "padding": "10px",
+                    "border-radius": "5px"
+                });
+            });
+        </script>
+
+        <hr>
+
+        <p><b>19. Mouseover Event</b></p>
+        <p id="demo19">Move your mouse over me!</p>
+
+        <script>
+            $("#demo19").mouseover(function() {
+                $(this).css("color", "black");
+            });
+        </script>
+
+        <hr>
+
+        <p><b>20. Click Event to Change Text</b></p>
+        <p id="demo20">Click this text!</p>
+
+        <script>
+            $("#demo20").click(function() {
+                $(this).text("The text has been changed by a click!");
+            });
+        </script>
+
+    </body>
+</html>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
